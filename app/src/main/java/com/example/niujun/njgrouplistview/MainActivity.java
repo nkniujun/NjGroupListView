@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         g3.addItem("张毅3");
         g3.addItem("张毅4");
         g3.addItem("张毅5");
+        g3.addItem("张毅6");
         datas.add(g1);
         datas.add(g2);
         datas.add(g3);
