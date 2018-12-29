@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     ListView mListView;
     ComGroupAdapter mAdapter;
     List<Group> datas;
+    int l = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,25 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new ComGroupAdapter(this, datas);
         mListView.setAdapter(mAdapter);
         initData();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        /*测试断点代码*/
+        for (int k = 0; k < 10; k++) {
+            l = k + 1;
+            System.out.println("l = " + l);
+            System.out.println("k = " + k);
+            caulation(l, k);
+        }
+    }
+
+
+    private int caulation(int a, int b) {
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        return a + b;
     }
 
     private void initData() {
@@ -49,5 +70,7 @@ public class MainActivity extends AppCompatActivity {
         datas.add(g1);
         datas.add(g2);
         datas.add(g3);
+
+
     }
 }
